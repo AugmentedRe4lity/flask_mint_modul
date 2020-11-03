@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 @app.route('/', methods = ['POST', 'GET'])
 def index():
-    global mysql
     cd = request.cookies.get('l') if request.cookies.get('l')!=None else ''
     try:
         name = request.args.get('name')
@@ -70,7 +69,7 @@ def index():
 
 @app.route('/down')
 def download():
-    return render_template('data.csv')
+    return render_template('log.txt')
 
 @app.route('/viewer')
 def viewer():
@@ -124,4 +123,4 @@ def cookiedata():
     return render_template('cookie_data.html', l=l)
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', debug=True, port='8081')
+    app.run(host='0.0.0.0')
