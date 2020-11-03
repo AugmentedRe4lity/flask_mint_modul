@@ -7,6 +7,7 @@
             <div class="col-lg">
                 {{- util.form_input_text(name="date", label="Datum", defaultvalue=date, addon=".2020") -}}
                 {%- for name, label, addon in (
+                        ("name", "Eintragender", ""),
                         ("uz", "Uhrzeit", "Uhr"),
                         ("gpsy", "GPS Breite", "°N"),
                         ("gpsx", "GPS Länge", "°O"),
@@ -38,11 +39,12 @@
                         ("nitrat", "Nitrat", "mg/l"),
                         ("nwl", "Nitrat WINLAB", "mg/l"),
                         ("nitrit", "Nitrit", "mg/l"),
+                        ("niwl", "Nitrit WINLAB", "mg/l"),
                         ("ammonium", "Ammonium", "mg/l"),
                         ("awl", "Ammonium WINLAB", "mg/l"),
                         ("phosphat", "Phosphat", "mg/l"),
                         ("pwl", "Phosphat WINLAB", "mg/l"),
-                        ("phwert", "pH-Wert", ""),
+                        ("phwert", "pH-Wert", "")
                         ) %}
                     {{- util.form_input_text(name=name, label=label, addon=addon) }}
                 {%- endfor %}
